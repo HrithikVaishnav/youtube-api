@@ -1,0 +1,10 @@
+// curls for testing 
+
+// to get all video data 
+curl --location --request GET 'http://localhost:8000/api/getVideos'
+
+// to get pagination data 
+curl --location --request GET 'http://localhost:8000/api/getPaginationVideo?pageNumber=3'
+
+// to get serach result data 
+curl --location --request GET 'http://localhost:8000/api/searchVideo?title=Google I/O 101: Q%26A On Using Google APIs'
