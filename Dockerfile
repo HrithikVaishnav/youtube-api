@@ -2,8 +2,12 @@ FROM node:16
 # Create app directory
 WORKDIR /app
 
-COPY package*.json ./
+# Copy files
+COPY . .
+
+# Install app dependencies
 RUN npm install
-COPY . ./app
-EXPOSE 8080
+RUN npm install pm2 -g
+
+EXPOSE 8000
 CMD ["pm2-runtime", "start", "index.js", "-i", "max"]

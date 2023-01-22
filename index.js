@@ -37,6 +37,12 @@ cron.schedule('1 * * * * *', async () => {
 
 app.use('/api/', videoRoutes);
 
+app.use('/', (req, res) => {
+    res.send({
+        success: 'ok'
+    });
+});
+
 app.listen(config.PORT || 8000,()=>{
     console.log("server running on port 8000");
-})
+});
