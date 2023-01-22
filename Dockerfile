@@ -1,9 +1,9 @@
 FROM node:16
 # Create app directory
-WORKDIR D:\works\FamPay
+WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
-COPY . .
+COPY . ./app
 EXPOSE 8080
-CMD [ "node", "index.js" ]
+CMD ["pm2-runtime", "start", "index.js", "-i", "max"]
